@@ -1,4 +1,3 @@
-//nextjs redux setup
 import { useRef } from "react";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {
@@ -24,13 +23,13 @@ import {
 import { PersistGate } from "redux-persist/integration/react";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 
-/* REDUX PERSISTENCE - setting up local storage state*/
+/* REDUX PERSISTENCE */
 const createNoopStorage = () => {
   return {
     getItem(_key: string) {
       return Promise.resolve(null);
     },
-    setItem(_key: string, value: unknown) {
+    setItem(_key: string, value: string) {
       return Promise.resolve(value);
     },
     removeItem(_key: string) {
