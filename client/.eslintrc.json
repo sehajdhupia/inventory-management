@@ -1,3 +1,20 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect", // Automatically detects the React version
+      "pragma": "React" // Add this to handle JSX
+    }
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off" // Turn off the rule since React 17+ does not require import
+  }
 }
